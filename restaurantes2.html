@@ -53,20 +53,21 @@
             <a class="navbar-brand">¿Necesitas ayuda?</a>
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." pattern="^[a-zA-Zñ0-9]*$"
                 aria-label="Search">
-            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buscar</button>
+            <button class="btn btn-danger my-2 my-sm-0" type="submit" >Buscar</button>
         </form>
     </nav>
     <!-- //Navigation bar -->
 
     <!-- Progress Bar -->
     <div class="progress" style="border-radius: 0%; height: 30px;">
-        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-            style="width: 33%; border-radius: 0%;">PASO 1 Escoge tu restaurante</div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+            style="width: 33%; border-radius: 0%; background-color: rgb(79, 137, 207); color: white">PASO 1 Escoge tu
+            restaurante</div>
     </div>
     <!-- //Progress Bar -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class=" modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -91,6 +92,30 @@
     </div>
     <!-- //Modal -->
 
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Querido cliente</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Nuestros filtros aún están en fase de dasarrollo...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <a href="restaurantes2.html">
+                  <button type="button" class="btn btn-danger">Continuar</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //Modal -->
+
     <!-- Main wrapper -->
     <div class="container-fluid">
         <div class="row">
@@ -104,8 +129,8 @@
                     <img src="resources/carrito.png" width="15" height="20" style="padding-top: 5px;"
                         class="d-inline-block align-top" alt="">
                     <a href="pagar.html">
-                        <button type="button" class="btn btn-warning"
-                            style="width: 160px; height: 40px; margin-top: 50px; margin-left: -90px;">
+                        <button type="button" class="btn" style="width: 160px; height: 40px; margin-top: 50px; margin-left: -90px; background-color: rgba(255, 188, 43, 0.897);
+                            color: black; border-color: black;">
                             Confirmar y pagar
                         </button>
                     </a>
@@ -124,8 +149,8 @@
                         <img src="resources/filters.png" width="15" height="20" style="padding-top: 5px;"
                             class="d-inline-block align-top" alt="">
 
-                        <button type="button" class="btn btn-warning"
-                            style="width: 100%; margin-left:860px; margin-top: -40px;">
+                        <button onclick="aplicarFiltros();" type="button" class="btn"
+                            style="width: 100%; margin-left:860px; margin-top: -40px; background-color: rgba(255, 188, 43, 0.897); border-color: black;">
                             Aplicar cambios
                         </button>
                     </div>
@@ -133,69 +158,72 @@
             </div>
             <div class="row">
                 <div class="col" style="margin-left: 80px; padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor1();" id="btn_ofertas" type="button" class="btn btn-white" onpressed=""
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Ofertas
+                    <button onclick="changeColor1();" id="btn_ofertas" type="button" class="btn" onpressed=""
+                        data-toggle="button" aria-pressed="false" autocomplete="off"
+                        style="width: 100%; border-color: black;">Ofertas
                         especiales</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor2();" id="btn_gastos" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Gastos de
+                    <button id="btn_gastos" type="button" class="btn" data-toggle="button" aria-pressed="false"
+                        autocomplete="off" style="width: 100%; border-color: black; cursor: not-allowed;">Gastos de
                         entrega gratis</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor3();" id="btn_val" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Mejores
+                    <button onclick="changeColor3();" id="btn_val" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off" style="width: 100%; border-color: black;">Mejores
                         valorados</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor4();" id="btn_abiertos" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Abiertos
+                    <button onclick="changeColor4();" id="btn_abiertos" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off" style="width: 100%; border-color: black;">Abiertos
                         ahora</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor5();" id="btn_recogida" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off"
-                        style="width: 100%">Recogida</button>
+                    <button onclick="changeColor5();" id="btn_recogida" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off"
+                        style="width: 100%; border-color: black;">Recogida</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor6();" id="btn_nuevo" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Nuevo</button>
+                    <button onclick="changeColor6();" id="btn_pizzas" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off"
+                        style="width: 100%; border-color: black;">Pizzas</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor7();" id="btn_halal" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Halal</button>
+                    <button id="btn_halal" type="button" class="btn" data-toggle="button" aria-pressed="false"
+                        autocomplete="off" style="width: 100%; border-color: black; cursor: not-allowed;">Halal</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px; margin-right: 10px;">
-                    <button onclick="changeColor8();" id="btn_veg" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off"
-                        style="width: 100%">Vegetariano</button>
+                    <button onclick="changeColor8();" id="btn_veg" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off"
+                        style="width: 100%; border-color: black;">Vegetariano</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="padding-top: 5px">
-                    <button onclick="changeColor9();" id="btn_vegano" type="button" class="btn btn-white"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" style="width: 100%">Vegano</button>
+                    <button onclick="changeColor9();" id="btn_marisco" type="button" class="btn" data-toggle="button"
+                        aria-pressed="false" autocomplete="off"
+                        style="width: 100%; border-color: black;">Marisco</button>
                 </div>
             </div>
             <!-- //Filters -->
 
-            <div class="restaurant_block">
+            <div id="principal_block" class="restaurant_block">
 
-                <div class="Flex">
+                <div id="limitadas_div" class="Flex">
                     <div class="title2">Ofertas limitadas</div>
                     <i onclick="leftButton();" style="margin-left: 810px;" class="arrow left" type="button"></i>
                     <i onclick="rightButton();" class="arrow right" type="button"></i>
@@ -208,7 +236,7 @@
 
                         <!--------------------------------------------BLOQUE 1------------------------->
 
-                        <li class="notFlex">
+                        <li id="pizza_nap" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/pizzeria1.jpg">
@@ -256,7 +284,7 @@
                         </li>
                         <!--------------------------------------------BLOQUE 2------------------------->
 
-                        <li class="notFlex">
+                        <li id="tgb" class="notFlex">
 
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
@@ -305,7 +333,7 @@
                         </li>
                         <!--------------------------------------------BLOQUE 3------------------------->
 
-                        <li class="notFlex">
+                        <li id="kebab_donner" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/kebab.jpeg">
@@ -363,7 +391,7 @@
 
             <div class="restaurant_block">
 
-                <div class="Flex">
+                <div id="mas_pedido_div" class="Flex">
                     <div class="title2">Lo más pedido en tu zona</div>
                     <i onclick="leftButton();" style="margin-left: 670px;" class="arrow left" type="button"></i>
                     <i onclick="rightButton();" class="arrow right" type="button"></i>
@@ -375,7 +403,7 @@
 
                         <!--------------------------------------------BLOQUE 1------------------------->
 
-                        <li class="notFlex">
+                        <li id="tapas_emilio" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/typical.jpeg">
@@ -426,7 +454,7 @@
 
                         <!--------------------------------------------BLOQUE 2------------------------->
 
-                        <li class="notFlex">
+                        <li id="rest_dragon" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/chinese.jpeg">
@@ -477,7 +505,7 @@
 
                         <!--------------------------------------------BLOQUE 3------------------------->
 
-                        <li class="notFlex">
+                        <li id="kebab_raval" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/kebab1.jpeg">
@@ -540,7 +568,7 @@
 
             <div class="restaurant_block">
 
-                <div class="Flex">
+                <div id="para_ti_div" class="Flex">
                     <div class="title2">Solo para ti</div>
                     <i onclick="leftButton();" style="margin-left: 890px;" class="arrow left" type="button"></i>
                     <i onclick="rightButton();" class="arrow right" type="button"></i>
@@ -552,7 +580,7 @@
 
                         <!--------------------------------------------BLOQUE 1------------------------->
 
-                        <li class="notFlex">
+                        <li id="meson_esteban" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/langosta.jpeg">
@@ -603,7 +631,7 @@
 
                         <!--------------------------------------------BLOQUE 2------------------------->
 
-                        <li class="notFlex">
+                        <li id="rest_fallas" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/paella.jpeg">
@@ -654,7 +682,7 @@
 
                         <!--------------------------------------------BLOQUE 3------------------------->
 
-                        <li class="notFlex">
+                        <li id="o_candil" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/pulpo.jpeg">
@@ -709,7 +737,7 @@
 
                         <!--------------------------------------------BLOQUE 1------------------------->
 
-                        <li class="notFlex">
+                        <li id="rest_kioto" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/sushi.jpeg">
@@ -760,7 +788,7 @@
 
                         <!--------------------------------------------BLOQUE 2------------------------->
 
-                        <li class="notFlex">
+                        <li id="la_arista" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/autor.jpeg">
@@ -811,7 +839,7 @@
 
                         <!--------------------------------------------BLOQUE 3------------------------->
 
-                        <li class="notFlex">
+                        <li id="bar_munich" class="notFlex">
                             <div class="img_rest" type="button">
                                 <a href="ordering_food2.html">
                                     <img class="Image-restaurant" src="resources/alemana.jpeg">
@@ -923,150 +951,240 @@
 
     <script>
 
+        // Bototnes de los filtros
+
         var btn_ofertas = document.getElementById("btn_ofertas");
         var btn_gastos = document.getElementById("btn_gastos");
         var btn_val = document.getElementById("btn_val");
         var btn_abiertos = document.getElementById("btn_abiertos");
         var btn_recogida = document.getElementById("btn_recogida");
-        var btn_nuevo = document.getElementById("btn_nuevo");
+        var btn_pizzas = document.getElementById("btn_pizzas");
         var btn_halal = document.getElementById("btn_halal");
         var btn_veg = document.getElementById("btn_veg");
-        var btn_vegano = document.getElementById("btn_vegano");
+        var btn_marisco = document.getElementById("btn_marisco");
+
+        // Restaurantes
+
+        var pizza_nap = document.getElementById("pizza_nap");
+        var tgb = document.getElementById("tgb");
+        var kebab_donner = document.getElementById("kebab_donner");
+        var tapas_emilio = document.getElementById("tapas_emilio");
+        var rest_dragon = document.getElementById("rest_dragon");
+        var kebab_raval = document.getElementById("kebab_raval");
+        var meson_esteban = document.getElementById("meson_esteban");
+        var rest_fallas = document.getElementById("rest_fallas");
+        var o_candil = document.getElementById("o_candil");
+        var rest_kioto = document.getElementById("rest_kioto");
+        var la_arista = document.getElementById("la_arista");
+        var bar_munich = document.getElementById("bar_munich");
+
+        // Block
+
+        var principal_block = document.getElementById("principal_block");
+
+        // Divs title
+
+        var para_ti_div = document.getElementById("para_ti_div");
+        var limitadas_div = document.getElementById("limitadas_div");
+        var mas_pedido_div = document.getElementById("mas_pedido_div");
+
+        // Cambiamos color de fondo de los botones
 
         btn_ofertas.style.background = "white";
-        btn_gastos.style.background = "white";
+        btn_gastos.style.background = "rgb(166, 179, 197,0.5)";
         btn_val.style.background = "white";
         btn_abiertos.style.background = "white";
         btn_recogida.style.background = "white";
-        btn_nuevo.style.background = "white";
-        btn_halal.style.background = "white";
+        btn_pizzas.style.background = "white";
+        btn_halal.style.background = "rgb(166, 179, 197,0.5)";
         btn_veg.style.background = "white";
-        btn_vegano.style.background = "white";
+        btn_marisco.style.background = "white";
 
-        option1 = 0;
-        option2 = 0;
-        option3 = 0;
-        option4 = 0;
-        option5 = 0;
-        option6 = 0;
-        option7 = 0;
-        option8 = 0;
-        option9 = 0;
+        // Opciones para cambiar color al clicar un boton de los filtros
+
+        option1 = false; // ofertas esp
+        option2 = false; // gastos gratis
+        option3 = false; // mejores val
+        option4 = false; // abiertos ahora
+        option5 = false; // recogida
+        option6 = false; // pizzas
+        option7 = false; // halal
+        option8 = false; // vegetariano
+        option9 = false; // marisco
+
+        function aplicarFiltros() {
+            limitadas_div.style.display = "none";
+            mas_pedido_div.style.display = "none";
+            para_ti_div.style.display = "none";
+
+            pizza_nap.style.display = "none";
+            tgb.style.display = "none";
+            kebab_donner.style.display = "none";
+            tapas_emilio.style.display = "none";
+            rest_dragon.style.display = "none";
+            kebab_raval.style.display = "none";
+            meson_esteban.style.display = "none";
+            rest_fallas.style.display = "none";
+            o_candil.style.display = "none";
+            rest_kioto.style.display = "none";
+            la_arista.style.display = "none";
+            bar_munich.style.display = "none";
+
+            principal_block.className = "loader";
+            setTimeout(function () {
+                principal_block.className = "restaurant_block";
+
+                if (option1 && !option6 && !option8 && !option9) {
+                    pizza_nap.style.display = "block";
+                    tgb.style.display = "block";
+                    kebab_donner.style.display = "block";
+                }
+                else if (option1 && !option8 && option6 && !option9) {
+                    pizza_nap.style.display = "block";
+                }
+                else if (option6 && !option3 && !option8 && !option1 && !option9) {
+                    pizza_nap.style.display = "block";
+                }
+                else if (option8 && !option3 && !option6 && !option1 && !option9) {
+                    tapas_emilio.style.display = "block";
+                    rest_dragon.style.display = "block";
+                }
+                else if (option9 && !option3 && !option6 && !option1 && !option8) {
+                    rest_fallas.style.display = "block";
+                    meson_esteban.style.display = "block";
+                }
+                else if (!option6 && !option3 && !option8 && !option1 && !option9) {
+                    pizza_nap.style.display = "block";
+                    tgb.style.display = "block";
+                    kebab_donner.style.display = "block";
+                    tapas_emilio.style.display = "block";
+                    rest_dragon.style.display = "block";
+                    kebab_raval.style.display = "block";
+                    meson_esteban.style.display = "block";
+                    rest_fallas.style.display = "block";
+                    o_candil.style.display = "block";
+                    rest_kioto.style.display = "block";
+                    la_arista.style.display = "block";
+                    bar_munich.style.display = "block";
+                }
+                else {
+                    $('#exampleModal2').modal('show');
+                }
+            }, 2000);
+        }
 
         function changeColor1() {
-            if (option1 == 0) {
-                btn_ofertas.style.background = "#d63636";
+            if (option1 == false) {
+                btn_ofertas.style.background = "rgb(0, 149, 72)";
                 btn_ofertas.style.color = "white"
-                option1 = 1;
+                option1 = true;
             } else {
                 btn_ofertas.style.background = "white";
                 btn_ofertas.style.color = "black"
-                option1 = 0;
+                option1 = false;
             }
         }
 
 
         function changeColor2() {
-            if (option2 == 0) {
-                btn_gastos.style.background = "#d63636";
+            if (option2 == false) {
+                btn_gastos.style.background = "rgb(0, 149, 72)";
                 btn_gastos.style.color = "white"
-                option2 = 1;
+                option2 = true;
             } else {
                 btn_gastos.style.background = "white";
                 btn_gastos.style.color = "black"
-                option2 = 0;
+                option2 = false;
             }
         }
 
 
         function changeColor3() {
-            if (option3 == 0) {
-                btn_val.style.background = "#d63636";
+            if (option3 == false) {
+                btn_val.style.background = "rgb(0, 149, 72)";
                 btn_val.style.color = "white"
-                option3 = 1;
+                option3 = true;
             } else {
                 btn_val.style.background = "white";
                 btn_val.style.color = "black"
-                option3 = 0;
+                option3 = false;
             }
         }
 
 
         function changeColor4() {
-            if (option4 == 0) {
-                btn_abiertos.style.background = "#d63636";
+            if (option4 == false) {
+                btn_abiertos.style.background = "rgb(0, 149, 72)";
                 btn_abiertos.style.color = "white"
-                option4 = 1;
+                option4 = true;
             } else {
                 btn_abiertos.style.background = "white";
                 btn_abiertos.style.color = "black"
-                option4 = 0;
+                option4 = false;
             }
         }
 
         function changeColor5() {
-            if (option5 == 0) {
-                btn_recogida.style.background = "#d63636";
+            if (option5 == false) {
+                btn_recogida.style.background = "rgb(0, 149, 72)";
                 btn_recogida.style.color = "white"
-                option5 = 1;
+                option5 = true;
             } else {
                 btn_recogida.style.background = "white";
                 btn_recogida.style.color = "black"
-                option5 = 0;
+                option5 = false;
             }
         }
 
         function changeColor6() {
-            if (option6 == 0) {
-                btn_nuevo.style.background = "#d63636";
-                btn_nuevo.style.color = "white"
-                option6 = 1;
+            if (option6 == false) {
+                btn_pizzas.style.background = "rgb(0, 149, 72)";
+                btn_pizzas.style.color = "white"
+                option6 = true;
             } else {
-                btn_nuevo.style.background = "white";
-                btn_nuevo.style.color = "black"
-                option6 = 0;
+                btn_pizzas.style.background = "white";
+                btn_pizzas.style.color = "black"
+                option6 = false;
             }
         }
 
         function changeColor7() {
-            if (option7 == 0) {
-                btn_halal.style.background = "#d63636";
+            if (option7 == false) {
+                btn_halal.style.background = "rgb(0, 149, 72)";
                 btn_halal.style.color = "white"
-                option7 = 1;
+                option7 = true;
             } else {
                 btn_halal.style.background = "white";
                 btn_halal.style.color = "black"
-                option7 = 0;
+                option7 = false;
             }
         }
 
         function changeColor8() {
-            if (option8 == 0) {
-                btn_veg.style.background = "#d63636";
+            if (option8 == false) {
+                btn_veg.style.background = "rgb(0, 149, 72)";
                 btn_veg.style.color = "white"
-                option8 = 1;
+                option8 = true;
             } else {
                 btn_veg.style.background = "white";
                 btn_veg.style.color = "black"
-                option8 = 0;
+                option8 = false;
             }
         }
 
-
         function changeColor9() {
-            if (option9 == 0) {
-                btn_vegano.style.background = "#d63636";
-                btn_vegano.style.color = "white"
-                option9 = 1;
+            if (option9 == false) {
+                btn_marisco.style.background = "rgb(0, 149, 72)";
+                btn_marisco.style.color = "white"
+                option9 = true;
             } else {
-                btn_vegano.style.background = "white";
-                btn_vegano.style.color = "black"
-                option9 = 0;
+                btn_marisco.style.background = "white";
+                btn_marisco.style.color = "black"
+                option9 = false;
             }
         }
 
     </script>
-
 </body>
 
 </html>
