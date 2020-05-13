@@ -1192,15 +1192,24 @@
     <script>
         var $jq = jQuery.noConflict();
 
+        version1 = false;
+
         $jq('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
         $jq(window).on('load', function () {
             setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
         });
         function removeLoader() {
             $jq("#loadingDiv").fadeOut(500, function () {
+                version1 = true
                 // fadeOut complete. Remove the loading div
                 $jq("#loadingDiv").remove(); //makes page more lightweight 
             });
+            if (!version1) {
+                document.getElementById("loadingDiv").addEventListener("transitionend", function (event) {
+                    document.getElementById("loadingDiv").style.display = 'none';
+                }, false);
+                document.getElementById("loadingDiv").style.opacity = '0';
+            }
         }
     </script>
 
