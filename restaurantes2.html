@@ -1211,9 +1211,7 @@
         function removeLoaderv2() {
             alert("function called")
             if (!version1) {
-                document.getElementById("loadingDiv").addEventListener("transitionend", function (event) {
-                    $jq("#loadingDiv").remove(); //makes page more lightweight 
-                }, false);
+                $jq("#loadingDiv").remove(); //makes page more lightweight 
             }
         }
     </script>
