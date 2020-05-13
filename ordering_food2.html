@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="styles_restuarantes.css" rel="stylesheet" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/core.css">
@@ -55,8 +55,7 @@
             <a class="navbar-brand">¿Necesitas ayuda?</a>
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." pattern="^[a-zA-Zñ0-9]*$"
                 aria-label="Search">
-            <button class="btn btn-danger my-2 my-sm-0" 
-                type="submit">Buscar</button>
+            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buscar</button>
         </form>
     </nav>
     <!-- //Navigation bar -->
@@ -392,11 +391,11 @@
             if (total > 0) {
                 btn_pagar.style.backgroundColor = "rgba(255, 188, 43, 0.897)";
                 btn_pagar.style.cursor = "pointer";
-                pagar_page.href="pagar.html";
+                pagar_page.href = "pagar.html";
             } else {
                 btn_pagar.style.backgroundColor = "rgb(166, 179, 197,0.5)";
                 btn_pagar.style.cursor = "not-allowed";
-                pagar_page.href="javascript:void(0)";
+                pagar_page.href = "javascript:void(0)";
             }
         }
 
@@ -981,6 +980,21 @@
             }
         }
 
+    </script>
+
+    <script>
+        var $jq = jQuery.noConflict();
+
+        $jq('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+        $jq(window).on('load', function () {
+            setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+        });
+        function removeLoader() {
+            $jq("#loadingDiv").fadeOut(500, function () {
+                // fadeOut complete. Remove the loading div
+                $jq("#loadingDiv").remove(); //makes page more lightweight 
+            });
+        }
     </script>
 
 
