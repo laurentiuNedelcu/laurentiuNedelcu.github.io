@@ -1197,7 +1197,7 @@
         $jq('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
         $jq(window).on('load', function () {
             setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
-            setTimeout(removeLoaderv2,2500);
+            setTimeout(removeLoaderv2, 2500);
         });
         function removeLoader() {
             $jq("#loadingDiv").fadeOut(500, function () {
@@ -1212,9 +1212,8 @@
             alert("function called")
             if (!version1) {
                 document.getElementById("loadingDiv").addEventListener("transitionend", function (event) {
-                    document.getElementById("loadingDiv").style.display = 'none';
+                    $jq("#loadingDiv").remove(); //makes page more lightweight 
                 }, false);
-                document.getElementById("loadingDiv").style.opacity = '0';
             }
         }
     </script>
