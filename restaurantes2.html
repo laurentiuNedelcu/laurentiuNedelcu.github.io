@@ -1201,6 +1201,7 @@
         function removeLoader() {
             $jq("#loadingDiv").fadeOut(500, function () {
                 version1 = true
+                console.log('version1: ' + version1)
                 // fadeOut complete. Remove the loading div
                 $jq("#loadingDiv").remove(); //makes page more lightweight 
             });
